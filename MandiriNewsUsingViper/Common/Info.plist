@@ -4,8 +4,10 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
+		<key>App Transport Security Settings</key>
+		<dict/>
+		<key>Allow Arbitrary Loads</key>
+		<true/>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
@@ -16,7 +18,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>CategoryVC</string>
 				</dict>
 			</array>
 		</dict>

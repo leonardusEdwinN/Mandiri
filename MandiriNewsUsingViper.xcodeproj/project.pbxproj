@@ -14,6 +14,14 @@
 		134BEEA22B6DDD2D002E4B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA02B6DDD2D002E4B93 /* Main.storyboard */; };
 		134BEEA42B6DDD2F002E4B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA32B6DDD2F002E4B93 /* Assets.xcassets */; };
 		134BEEA72B6DDD2F002E4B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA52B6DDD2F002E4B93 /* LaunchScreen.storyboard */; };
+		134BEEDE2B6E1CB7002E4B93 /* CategoryVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEDD2B6E1CB7002E4B93 /* CategoryVC.storyboard */; };
+		134BEEE02B6E1CCC002E4B93 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEDF2B6E1CCC002E4B93 /* CategoryVC.swift */; };
+		134BEEE62B6E1DA9002E4B93 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEE52B6E1DA9002E4B93 /* CategoryEntity.swift */; };
+		134BEEE82B6E1DC4002E4B93 /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEE72B6E1DC4002E4B93 /* CategoryInteractor.swift */; };
+		134BEEEA2B6E1DCC002E4B93 /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEE92B6E1DCC002E4B93 /* CategoryPresenter.swift */; };
+		134BEEEC2B6E1DD7002E4B93 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEEB2B6E1DD7002E4B93 /* CategoryRouter.swift */; };
+		134BEEF02B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEEE2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift */; };
+		134BEEF12B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEEF2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +33,14 @@
 		134BEEA32B6DDD2F002E4B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		134BEEA62B6DDD2F002E4B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		134BEEA82B6DDD2F002E4B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		134BEEDD2B6E1CB7002E4B93 /* CategoryVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryVC.storyboard; sourceTree = "<group>"; };
+		134BEEDF2B6E1CCC002E4B93 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		134BEEE52B6E1DA9002E4B93 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
+		134BEEE72B6E1DC4002E4B93 /* CategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
+		134BEEE92B6E1DCC002E4B93 /* CategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
+		134BEEEB2B6E1DD7002E4B93 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		134BEEEE2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		134BEEEF2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		650951E133471A4CDA0C5F72 /* Pods_MandiriNewsUsingViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MandiriNewsUsingViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918006A0C51C9909E3607446 /* Pods-MandiriNewsUsingViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.debug.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.debug.xcconfig"; sourceTree = "<group>"; };
 		C847BE62F682BBC41600E292 /* Pods-MandiriNewsUsingViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.release.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +79,15 @@
 		134BEE992B6DDD2D002E4B93 /* MandiriNewsUsingViper */ = {
 			isa = PBXGroup;
 			children = (
+				134BEEDB2B6E1CA2002E4B93 /* Category */,
+				134BEEDA2B6E1C75002E4B93 /* Common */,
+			);
+			path = MandiriNewsUsingViper;
+			sourceTree = "<group>";
+		};
+		134BEEDA2B6E1C75002E4B93 /* Common */ = {
+			isa = PBXGroup;
+			children = (
 				134BEE9A2B6DDD2D002E4B93 /* AppDelegate.swift */,
 				134BEE9C2B6DDD2D002E4B93 /* SceneDelegate.swift */,
 				134BEE9E2B6DDD2D002E4B93 /* ViewController.swift */,
@@ -71,7 +96,70 @@
 				134BEEA52B6DDD2F002E4B93 /* LaunchScreen.storyboard */,
 				134BEEA82B6DDD2F002E4B93 /* Info.plist */,
 			);
-			path = MandiriNewsUsingViper;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		134BEEDB2B6E1CA2002E4B93 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEE42B6E1D8B002E4B93 /* Router */,
+				134BEEE32B6E1D84002E4B93 /* Entity */,
+				134BEEE22B6E1D7F002E4B93 /* Presenter */,
+				134BEEE12B6E1D7A002E4B93 /* Interactor */,
+				134BEEDC2B6E1CA8002E4B93 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		134BEEDC2B6E1CA8002E4B93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEED2B6E1DE0002E4B93 /* Cell */,
+				134BEEDD2B6E1CB7002E4B93 /* CategoryVC.storyboard */,
+				134BEEDF2B6E1CCC002E4B93 /* CategoryVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		134BEEE12B6E1D7A002E4B93 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEE72B6E1DC4002E4B93 /* CategoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		134BEEE22B6E1D7F002E4B93 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEE92B6E1DCC002E4B93 /* CategoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		134BEEE32B6E1D84002E4B93 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEE52B6E1DA9002E4B93 /* CategoryEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		134BEEE42B6E1D8B002E4B93 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEEB2B6E1DD7002E4B93 /* CategoryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		134BEEED2B6E1DE0002E4B93 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEEE2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift */,
+				134BEEEF2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8072DEEDCE1EC8EE4E732332 /* Pods */ = {
@@ -80,7 +168,6 @@
 				918006A0C51C9909E3607446 /* Pods-MandiriNewsUsingViper.debug.xcconfig */,
 				C847BE62F682BBC41600E292 /* Pods-MandiriNewsUsingViper.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,8 +240,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				134BEEA72B6DDD2F002E4B93 /* LaunchScreen.storyboard in Resources */,
+				134BEEF12B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib in Resources */,
 				134BEEA42B6DDD2F002E4B93 /* Assets.xcassets in Resources */,
 				134BEEA22B6DDD2D002E4B93 /* Main.storyboard in Resources */,
+				134BEEDE2B6E1CB7002E4B93 /* CategoryVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134BEEEA2B6E1DCC002E4B93 /* CategoryPresenter.swift in Sources */,
+				134BEEE82B6E1DC4002E4B93 /* CategoryInteractor.swift in Sources */,
+				134BEEF02B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift in Sources */,
 				134BEE9F2B6DDD2D002E4B93 /* ViewController.swift in Sources */,
 				134BEE9B2B6DDD2D002E4B93 /* AppDelegate.swift in Sources */,
+				134BEEE02B6E1CCC002E4B93 /* CategoryVC.swift in Sources */,
 				134BEE9D2B6DDD2D002E4B93 /* SceneDelegate.swift in Sources */,
+				134BEEEC2B6E1DD7002E4B93 /* CategoryRouter.swift in Sources */,
+				134BEEE62B6E1DA9002E4B93 /* CategoryEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +367,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -335,7 +430,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -363,10 +458,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MandiriNewsUsingViper/Info.plist;
+				INFOPLIST_FILE = MandiriNewsUsingViper/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = CategoryVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,10 +486,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MandiriNewsUsingViper/Info.plist;
+				INFOPLIST_FILE = MandiriNewsUsingViper/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = CategoryVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
