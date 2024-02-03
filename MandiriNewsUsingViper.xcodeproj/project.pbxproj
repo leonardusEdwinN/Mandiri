@@ -10,7 +10,6 @@
 		06DAB2951229B272D37071B1 /* Pods_MandiriNewsUsingViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650951E133471A4CDA0C5F72 /* Pods_MandiriNewsUsingViper.framework */; };
 		134BEE9B2B6DDD2D002E4B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEE9A2B6DDD2D002E4B93 /* AppDelegate.swift */; };
 		134BEE9D2B6DDD2D002E4B93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEE9C2B6DDD2D002E4B93 /* SceneDelegate.swift */; };
-		134BEE9F2B6DDD2D002E4B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEE9E2B6DDD2D002E4B93 /* ViewController.swift */; };
 		134BEEA22B6DDD2D002E4B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA02B6DDD2D002E4B93 /* Main.storyboard */; };
 		134BEEA42B6DDD2F002E4B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA32B6DDD2F002E4B93 /* Assets.xcassets */; };
 		134BEEA72B6DDD2F002E4B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEA52B6DDD2F002E4B93 /* LaunchScreen.storyboard */; };
@@ -22,13 +21,13 @@
 		134BEEEC2B6E1DD7002E4B93 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEEB2B6E1DD7002E4B93 /* CategoryRouter.swift */; };
 		134BEEF02B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEEE2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift */; };
 		134BEEF12B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134BEEEF2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib */; };
+		134BEEF32B6E2DF2002E4B93 /* CategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEEF22B6E2DF2002E4B93 /* CategoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		134BEE972B6DDD2D002E4B93 /* MandiriNewsUsingViper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MandiriNewsUsingViper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		134BEE9A2B6DDD2D002E4B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		134BEE9C2B6DDD2D002E4B93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		134BEE9E2B6DDD2D002E4B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		134BEEA12B6DDD2D002E4B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		134BEEA32B6DDD2F002E4B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		134BEEA62B6DDD2F002E4B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		134BEEEB2B6E1DD7002E4B93 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
 		134BEEEE2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		134BEEEF2B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		134BEEF22B6E2DF2002E4B93 /* CategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProtocol.swift; sourceTree = "<group>"; };
 		650951E133471A4CDA0C5F72 /* Pods_MandiriNewsUsingViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MandiriNewsUsingViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918006A0C51C9909E3607446 /* Pods-MandiriNewsUsingViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.debug.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.debug.xcconfig"; sourceTree = "<group>"; };
 		C847BE62F682BBC41600E292 /* Pods-MandiriNewsUsingViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.release.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 			children = (
 				134BEE9A2B6DDD2D002E4B93 /* AppDelegate.swift */,
 				134BEE9C2B6DDD2D002E4B93 /* SceneDelegate.swift */,
-				134BEE9E2B6DDD2D002E4B93 /* ViewController.swift */,
 				134BEEA02B6DDD2D002E4B93 /* Main.storyboard */,
 				134BEEA32B6DDD2F002E4B93 /* Assets.xcassets */,
 				134BEEA52B6DDD2F002E4B93 /* LaunchScreen.storyboard */,
@@ -107,6 +106,7 @@
 				134BEEE22B6E1D7F002E4B93 /* Presenter */,
 				134BEEE12B6E1D7A002E4B93 /* Interactor */,
 				134BEEDC2B6E1CA8002E4B93 /* View */,
+				134BEEF22B6E2DF2002E4B93 /* CategoryProtocol.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -299,9 +299,9 @@
 				134BEEEA2B6E1DCC002E4B93 /* CategoryPresenter.swift in Sources */,
 				134BEEE82B6E1DC4002E4B93 /* CategoryInteractor.swift in Sources */,
 				134BEEF02B6E1DF0002E4B93 /* CategoryItemCollectionViewCell.swift in Sources */,
-				134BEE9F2B6DDD2D002E4B93 /* ViewController.swift in Sources */,
 				134BEE9B2B6DDD2D002E4B93 /* AppDelegate.swift in Sources */,
 				134BEEE02B6E1CCC002E4B93 /* CategoryVC.swift in Sources */,
+				134BEEF32B6E2DF2002E4B93 /* CategoryProtocol.swift in Sources */,
 				134BEE9D2B6DDD2D002E4B93 /* SceneDelegate.swift in Sources */,
 				134BEEEC2B6E1DD7002E4B93 /* CategoryRouter.swift in Sources */,
 				134BEEE62B6E1DA9002E4B93 /* CategoryEntity.swift in Sources */,

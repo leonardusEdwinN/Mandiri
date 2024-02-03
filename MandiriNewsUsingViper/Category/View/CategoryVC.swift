@@ -7,15 +7,25 @@
 
 import Foundation
 import UIKit
+protocol CategoryViewControllerProtocol{
+    var presenter : CategoryPresenterProtocol? { get set }
+    
+    func update()
+//    func update(with error : String)
+}
 
-class CategoryVC: UIViewController{
+class CategoryVC: UIViewController, CategoryViewControllerProtocol{
+    var presenter: CategoryPresenterProtocol?
+    
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         registerCell()
-        setUINavigation()
+//        setUINavigation()
     }
     
     func setUINavigation(){
@@ -27,9 +37,13 @@ class CategoryVC: UIViewController{
     }
     
     func registerCell(){
-        categoryCollectionView.register(UINib.init(nibName: "CategoryItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryItemCollectionViewCell")
+        categoryCollectionView.register(UINib.init(nibName: "CategoryItemCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "CategoryItemCollectionViewCell")
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+    }
+    
+    func update() {
+//        self.categoryCollectionView.reloadData()
     }
 }
 
@@ -40,18 +54,17 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-//        return categoriesViewModel.numberOfRows(section)
+        return presenter?.categoryCount ?? 0
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItemCollectionViewCell", for: indexPath) as! CategoryItemCollectionViewCell
         
-//        let categoryVM = categoriesViewModel.modelAt(indexPath.row)
-//        if let imageString = categoryVM.item.categoryImage , let name = categoryVM.item.categoryName{
-            cell.setUI(image: "briefcase", title: "name")
-//        }
+        let category = presenter?.categories?[indexPath.row]
+        if let imageString = category?.categoryImage , let name = category?.categoryName{
+            cell.setUI(image: imageString, title: name)
+        }
         return cell
     }
     
