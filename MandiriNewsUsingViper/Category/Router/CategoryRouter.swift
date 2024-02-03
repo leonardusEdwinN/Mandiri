@@ -12,12 +12,16 @@ typealias EntryPoint = CategoryViewControllerProtocol & UIViewController
 
 protocol CategoryRouterProtocol{
     var entryPoint : EntryPoint? { get }
+    var navigationController: UINavigationController? { get }
     
     static func start() -> CategoryRouterProtocol
+    
+    func popBack()
+    func performSegue(with identifier:String, withCategory category: String)
 }
 
 class CategoryRouter: CategoryRouterProtocol{
-    
+    var navigationController: UINavigationController?
     var entryPoint: EntryPoint?
     
     static func start() -> CategoryRouterProtocol {
@@ -25,7 +29,7 @@ class CategoryRouter: CategoryRouterProtocol{
         
         //VIP
         // MARK:  VIEW
-        var view: CategoryViewControllerProtocol = CategoryVC()
+        var view: CategoryViewControllerProtocol = CategoryViewController()
         // MARK: Interactor
         var interactor: CategoryInteractorProtocol = CategoryInteractor()
         // MARK: Presenter
@@ -45,4 +49,14 @@ class CategoryRouter: CategoryRouterProtocol{
     }
     
     
+    func popBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func performSegue(with identifier: String, withCategory category: String) {
+        let router = CategoryRouter.start()
+        let initialVC = router.entryPoint
+        
+        initialVC?.navigationController?.visibleViewController?.performSegue(withIdentifier: identifier, sender: ["category": category])
+    }
 }

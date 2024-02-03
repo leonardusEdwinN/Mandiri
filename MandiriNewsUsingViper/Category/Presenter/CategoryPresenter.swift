@@ -16,6 +16,7 @@ protocol CategoryPresenterProtocol{
     
     func interactorDidFetchCategory(with result: [CategoryEntity])
     
+    func goToListNews(identifier:String, category: String)
     
 }
 
@@ -38,6 +39,10 @@ class CategoryPresenter: CategoryPresenterProtocol{
     func interactorDidFetchCategory(with result: [CategoryEntity]) {
         categories = result
         view?.update()
+    }
+    
+    func goToListNews(identifier:String, category: String) {
+        router?.performSegue(with: identifier, withCategory: category)
     }
     
     

@@ -8,33 +8,32 @@
 import Foundation
 import UIKit
 
-protocol LiveNewsListPresenterToViewProtocol: class {
-    func showNews()
-    func showError()
-}
-
-protocol LiveNewsListInteractorToPresenterProtocol: class {
-    func liveNewsFetched()
-    func liveNewsFetchedFailed()
-}
-
-protocol LiveNewsListPresentorToInteractorProtocol: class {
-    var presenter: LiveNewsListInteractorToPresenterProtocol? { get set }
-    var news: [LiveNewsModel]? { get }
-    
-    func fetchLiveNews()
-}
-
-protocol LiveNewsListViewToPresenterProtocol: class {
-    var view: LiveNewsListPresenterToViewProtocol? { get set }
-    var interactor: LiveNewsListPresentorToInteractorProtocol? { get set }
-    var router: LiveNewsListPresenterToRouterProtocol? { get set }
-    
-    func updateView()
-    func getNewsListCount() -> Int?
-    func getNews(index: Int) -> LiveNewsModel?
-}
-
-protocol LiveNewsListPresenterToRouterProtocol: class {
-    static func createModule() -> UIViewController
-}
+//protocol CategoryPresenterToViewProtocol: AnyObject {
+//    func showCategory()
+////    func showError()
+//}
+//
+//protocol CategoryInteractorToPresenterProtocol: AnyObject {
+//    func categoryFetched()
+//}
+//
+//protocol CategoryPresenterToInteractorProtocol: AnyObject {
+//    var presenter: CategoryInteractorToPresenterProtocol? { get set }
+//    var categories: [CategoryEntity]? { get }
+//    
+//    func fetchCategories()
+//}
+//
+//protocol CategoryViewToPresenterProtocol: AnyObject {
+//    var view: CategoryPresenterToViewProtocol? { get set }
+//    var interactor: CategoryPresenterToInteractorProtocol? { get set }
+//    var router: CategoryPresenterToRouterProtocol? { get set }
+//    
+//    func updateView()
+//    func getNewsListCount() -> Int?
+//    func getNews(index: Int) -> CategoryEntity?
+//}
+//
+//protocol CategoryPresenterToRouterProtocol: AnyObject {
+//    static func createModule() -> UIViewController
+//}
