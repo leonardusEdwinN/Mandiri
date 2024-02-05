@@ -20,6 +20,11 @@ class ListNewsView: UIViewController, ListNewsViewProtocol{
     @IBOutlet weak var newsListTableView: UITableView!
     
     override func viewDidLoad() {
+        DispatchQueue.main.async {
+            LoadingScreen.sharedInstance.showIndicator()
+            self.isLoading = true
+        }
+        
         presenter?.viewDidLoad(categoryNews : categoryNews ?? "all", countryCode: countryCode ?? "", source: sourceFrom ?? "")
         
         newsListTableView.register(UINib.init(nibName: "ArticleListTableViewCell", bundle: .main), forCellReuseIdentifier: "articleCell")
@@ -76,6 +81,12 @@ extension ListNewsView: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let article = articleList[row]
+        
+        presenter?.goToDetailNews(url: article.url ?? "", titleArticle: article.title ?? "", from: self)
     }
     
 //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

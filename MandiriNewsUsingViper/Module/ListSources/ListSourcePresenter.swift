@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 class ListSourcePresenter: ListSourcesPresenterProtocol{
-    
-    var view: ListSourcesViewProtocol?
+    weak var view: ListSourcesViewProtocol?
     var interactor: ListSourcesInputInteractorProtocol?
     var router: ListSourcesRouterProtocol?
     

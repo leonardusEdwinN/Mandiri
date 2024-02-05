@@ -17,6 +17,11 @@ class ListSourceView: UIViewController, ListSourcesViewProtocol{
     @IBOutlet weak var sourceTableView: UITableView!
     
     override func viewDidLoad() {
+        DispatchQueue.main.async {
+            LoadingScreen.sharedInstance.showIndicator()
+            self.isLoading = true
+        }
+        
         presenter?.categoryNews = categoryNews
         presenter?.viewDidLoad()
         

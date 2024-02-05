@@ -10,9 +10,9 @@ import UIKit
 
 
 class ListNewsRouter: ListNewsRouterProtocol{
-    func pushToDetailNews(with url: String, from view: UIViewController) {
-        let webViewDetail = view.storyboard?.instantiateViewController(withIdentifier: "WebView") as! ListNewsView
-//        ListNewsRouter.createFruitDetailModule(with: webViewDetail, and: url)
+    func pushToDetailNews(with url: String, titleArticle: String, from view: UIViewController) {
+        let webViewDetail = view.storyboard?.instantiateViewController(withIdentifier: "DetailNewsView") as! DetailNewsWebView
+        DetailNewsRouter.createDetailNewsModule(detailNewstRef: webViewDetail, urlSourceLink: url, title: titleArticle)
         view.navigationController?.pushViewController(webViewDetail, animated: true)
     }
     

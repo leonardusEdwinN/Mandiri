@@ -9,10 +9,7 @@ import Foundation
 import UIKit
 
 class ListNewsPresenter: ListNewsPresenterProtocol {
-    
-    
-    
-    var view: ListNewsViewProtocol?
+    weak var view: ListNewsViewProtocol?
     var interactor: ListNewsInputInteractorProtocol?
     var router: ListNewsRouterProtocol?
     
@@ -22,8 +19,8 @@ class ListNewsPresenter: ListNewsPresenterProtocol {
         interactor?.getNews(category: categoryNews, countryCode: countryCode, sourceFrom: source)
     }
     
-    func goToDetailNews(url: String, from view: UIViewController) {
-        
+    func goToDetailNews(url: String, titleArticle: String, from view: UIViewController) {
+        router?.pushToDetailNews(with: url, titleArticle: titleArticle, from: view)
     }
     
     

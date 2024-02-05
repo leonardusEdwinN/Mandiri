@@ -194,7 +194,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csA-r1-D1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513.740458015267" y="77.464788732394368"/>
+            <point key="canvasLocation" x="2585" y="61"/>
+        </scene>
+        <!--Detail News Web View-->
+        <scene sceneID="R9M-N2-hOn">
+            <objects>
+                <viewController storyboardIdentifier="DetailNewsView" id="OPd-OG-H1B" customClass="DetailNewsWebView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqe-zM-Bwd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dka-KH-wEv">
+                                <rect key="frame" x="8" y="125" width="377" height="677"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yb-L5-xES">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sources news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWI-fp-iJo">
+                                        <rect key="frame" x="8" y="16.999999999999996" width="377" height="16.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sWI-fp-iJo" secondAttribute="trailing" constant="8" id="8po-cg-YxZ"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="centerY" secondItem="3yb-L5-xES" secondAttribute="centerY" id="ayH-VK-Cj0"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="leading" secondItem="3yb-L5-xES" secondAttribute="leading" constant="8" id="rjz-x5-8hx"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="centerX" secondItem="3yb-L5-xES" secondAttribute="centerX" id="til-7a-tYx"/>
+                                    <constraint firstAttribute="height" constant="50" id="uV9-E9-Jor"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cZM-F7-udV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3yb-L5-xES" firstAttribute="top" secondItem="cZM-F7-udV" secondAttribute="top" id="DMC-lF-aZB"/>
+                            <constraint firstAttribute="trailing" secondItem="3yb-L5-xES" secondAttribute="trailing" id="LNu-ea-eY4"/>
+                            <constraint firstItem="dka-KH-wEv" firstAttribute="top" secondItem="3yb-L5-xES" secondAttribute="bottom" constant="16" id="N1A-fr-dv9"/>
+                            <constraint firstItem="cZM-F7-udV" firstAttribute="bottom" secondItem="dka-KH-wEv" secondAttribute="bottom" constant="16" id="ORo-AR-yra"/>
+                            <constraint firstItem="dka-KH-wEv" firstAttribute="leading" secondItem="cZM-F7-udV" secondAttribute="leading" constant="8" id="ZuX-Z8-F5R"/>
+                            <constraint firstItem="3yb-L5-xES" firstAttribute="leading" secondItem="cZM-F7-udV" secondAttribute="leading" id="d5W-Za-XrP"/>
+                            <constraint firstItem="cZM-F7-udV" firstAttribute="trailing" secondItem="dka-KH-wEv" secondAttribute="trailing" constant="8" id="owZ-Db-Mxv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleWebTitleLabel" destination="sWI-fp-iJo" id="OKu-Ta-KUr"/>
+                        <outlet property="navigationView" destination="3yb-L5-xES" id="qnL-1f-Emg"/>
+                        <outlet property="webView" destination="dka-KH-wEv" id="XB7-Za-jEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkg-dj-bvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3382.4427480916029" y="61.971830985915496"/>
         </scene>
     </scenes>
     <resources>
