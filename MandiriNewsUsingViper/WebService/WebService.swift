@@ -8,7 +8,7 @@ import Foundation
 import Moya
 
 public enum WebService {
-    case newsListWithCategory(category: String, countryId: String, source: String)
+    case newsListWithCategory(category: String, countryId: String, source: String, page: Int, limit: Int, query: String)
     case getNewsSources(page: Int, limit: Int, query: String)
 }
 
@@ -39,12 +39,15 @@ extension WebService: TargetType {
     
     public var task: Task {
         switch self {
-        case let .newsListWithCategory(category, countryId, source):
+        case let .newsListWithCategory(category, countryId, source, page, limit, query):
             return .requestParameters(
                 parameters: [
                     "country": countryId,
                     "source": source,
                     "category": category,
+                    "page": page,
+                    "pageSize": limit,
+                    "q": query,
                     "apiKey": ConstantAuth.APIKEY],
                 encoding: URLEncoding.default)
         case let .getNewsSources(page, limit, query):

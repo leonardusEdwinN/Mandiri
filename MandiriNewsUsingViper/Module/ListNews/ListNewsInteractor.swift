@@ -12,8 +12,8 @@ class ListNewsInteractor: ListNewsInputInteractorProtocol {
     let provider = MoyaProvider<WebService>()
     var presenter: ListNewsOutputInteractorProtocol?
     
-    func getNews(category: String, countryCode: String, sourceFrom: String) {
-        provider.request(.newsListWithCategory(category: category, countryId: "", source: sourceFrom)) { [weak self] result in
+    func getNews(category: String, countryCode: String, sourceFrom: String, limit: Int, page: Int, querySearch: String) {
+        provider.request(.newsListWithCategory(category: category, countryId: "", source: sourceFrom, page: page, limit: limit, query: querySearch)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

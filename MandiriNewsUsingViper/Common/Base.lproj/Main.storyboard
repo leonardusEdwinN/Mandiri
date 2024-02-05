@@ -131,6 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="articleTextField" destination="ZJn-5b-kdQ" id="StK-nS-KCi"/>
                         <outlet property="newsListTableView" destination="nUR-nA-CM2" id="ca8-XP-ihx"/>
                     </connections>
                 </viewController>

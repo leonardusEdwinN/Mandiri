@@ -16,13 +16,16 @@ protocol ListNewsPresenterProtocol: class{
     
     var categoryNews: String? { get set }
     
-    func viewDidLoad(categoryNews: String, countryCode: String, source: String)
+    func viewDidLoad(categoryNews: String, countryCode: String, source: String, limit: Int, page: Int, querySearch: String)
     func goToDetailNews(url: String, titleArticle: String, from view: UIViewController)
+    
+    func loadMoreArticles(isSearch: Bool, querySearch: String)
+    func searchArticles(querySearch: String)
 }
 
 protocol ListNewsViewProtocol: class{
     // PRESENTER -> VIEW
-    func updateNews(with news: [ArticlesEntity])
+    func updateNews(with news: [ArticlesEntity], isSearch: Bool)
     func updateWithError(with error : String)
 }
 
@@ -30,7 +33,7 @@ protocol ListNewsInputInteractorProtocol: class{
     //Presenter -> Interactor
     var presenter : ListNewsOutputInteractorProtocol? { get set }
     
-    func getNews(category: String, countryCode: String, sourceFrom: String)
+    func getNews(category: String, countryCode: String, sourceFrom: String, limit: Int, page: Int, querySearch: String)
 }
 
 protocol ListNewsOutputInteractorProtocol: class {

@@ -95,18 +95,19 @@ extension ListSourceView: UITableViewDataSource{
         presenter?.goToNewsListWithCategoryAndSource(with: self.categoryNews ?? "all", source: source.id ?? "", and: source.country ?? "id", from: self)
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let getCountSources = sourcesList.count
-        
-        if indexPath.row == getCountSources - 2 && !isLoading && getCountSources >= 10{
-            isLoading = true
-            LoadingScreen.sharedInstance.showIndicator()
-            guard let searchText = sourcesTextField.text else {return}
-            presenter?.loadMoreSources(isSearch: searchText == "" ? false : true, querySearch: searchText)
-            
-        }
-        
-    }
+    // MARK: NEWS API DIDNT HAVE LIMIT ON SOURCES
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let getCountSources = sourcesList.count
+//        
+//        if indexPath.row == getCountSources - 2 && !isLoading && getCountSources >= 10{
+//            isLoading = true
+//            LoadingScreen.sharedInstance.showIndicator()
+//            guard let searchText = sourcesTextField.text else {return}
+//            presenter?.loadMoreSources(isSearch: searchText == "" ? false : true, querySearch: searchText)
+//            
+//        }
+//        
+//    }
     
     
 }

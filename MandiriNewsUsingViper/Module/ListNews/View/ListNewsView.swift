@@ -17,6 +17,7 @@ class ListNewsView: UIViewController, ListNewsViewProtocol{
     var articleList = [ArticlesEntity]()
     var isLoading: Bool = false
     
+    @IBOutlet weak var articleTextField: UITextField!
     @IBOutlet weak var newsListTableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,14 +26,20 @@ class ListNewsView: UIViewController, ListNewsViewProtocol{
             self.isLoading = true
         }
         
-        presenter?.viewDidLoad(categoryNews : categoryNews ?? "all", countryCode: countryCode ?? "", source: sourceFrom ?? "")
+        presenter?.viewDidLoad(categoryNews : categoryNews ?? "all", countryCode: countryCode ?? "", source: sourceFrom ?? "", limit: 15, page: 1, querySearch: articleTextField.text ?? "")
         
         newsListTableView.register(UINib.init(nibName: "ArticleListTableViewCell", bundle: .main), forCellReuseIdentifier: "articleCell")
         newsListTableView.delegate = self
         newsListTableView.dataSource = self
+        
+        articleTextField.delegate = self
     }
     
-    func updateNews(with news: [ArticlesEntity]) {
+    func updateNews(with news: [ArticlesEntity], isSearch: Bool) {
+        if isSearch {
+            articleList = []
+        }
+        
         if news.count > 0 {
             news.forEach{ article in
                 articleList.append(article)
@@ -89,15 +96,42 @@ extension ListNewsView: UITableViewDataSource{
         presenter?.goToDetailNews(url: article.url ?? "", titleArticle: article.title ?? "", from: self)
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        // need to pass your indexpath then it showing your indicator at bottom
-//        tableView.addLoading(indexPath) {
-//            // add your code here
-//            // append Your array and reload your tableview
-//            self.getNewsFromSourceName(sourceName: self.sourcesName, isNext: true)
-//            tableView.stopLoading() // stop your indicator
-//        }
-//    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let getCountArticle = articleList.count
+        
+        if indexPath.row == getCountArticle - 2 && !isLoading && getCountArticle >= 10{
+            isLoading = true
+            LoadingScreen.sharedInstance.showIndicator()
+            guard let searchText = articleTextField.text else {return}
+            presenter?.loadMoreArticles(isSearch: searchText == "" ? false : true, querySearch: searchText)
+            
+        }
+        
+    }
     
     
+}
+
+
+extension ListNewsView : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.isLoading = true
+        LoadingScreen.sharedInstance.showIndicator()
+        
+        guard let searchText = textField.text else { return false}
+        presenter?.searchArticles(querySearch: searchText)
+        
+        return true
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ListSourceView.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
