@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="465" id="Wv2-CI-yEc" customClass="ArticleListTableViewCell" customModule="MandiriNewsUsingViper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wv2-CI-yEc" id="PdA-RQ-Cqh">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqG-yC-87c">
+                        <rect key="frame" x="10" y="10" width="300" height="155"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self-proclaimed bitcoin creator hails court victory - Reuters.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHw-Kx-boC">
+                                <rect key="frame" x="10" y="8" width="280" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nEd-zi-Qjo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reuters Editorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFG-iQ-Liu">
+                                <rect key="frame" x="10" y="87" width="280" height="13"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="11"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021-12-09T21:49:26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hR-cE-34N">
+                                <rect key="frame" x="10" y="73" width="280" height="14"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGray4Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Source : " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-E7-brK">
+                                <rect key="frame" x="10" y="105" width="280" height="45"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DFG-iQ-Liu" firstAttribute="top" secondItem="3hR-cE-34N" secondAttribute="bottom" id="Bkg-qZ-12g"/>
+                            <constraint firstAttribute="trailing" secondItem="JHw-Kx-boC" secondAttribute="trailing" constant="10" id="EhW-WZ-LYa"/>
+                            <constraint firstAttribute="trailing" secondItem="3hR-cE-34N" secondAttribute="trailing" constant="10" id="Io8-4l-FnJ"/>
+                            <constraint firstAttribute="trailing" secondItem="DFG-iQ-Liu" secondAttribute="trailing" constant="10" id="RWM-0l-xNd"/>
+                            <constraint firstItem="DFG-iQ-Liu" firstAttribute="leading" secondItem="KqG-yC-87c" secondAttribute="leading" constant="10" id="Sp5-1J-2Q8"/>
+                            <constraint firstItem="JHw-Kx-boC" firstAttribute="leading" secondItem="KqG-yC-87c" secondAttribute="leading" constant="10" id="V5O-Pf-c3z"/>
+                            <constraint firstItem="aXS-E7-brK" firstAttribute="top" secondItem="DFG-iQ-Liu" secondAttribute="bottom" constant="5" id="XLs-jE-lru"/>
+                            <constraint firstItem="3hR-cE-34N" firstAttribute="leading" secondItem="KqG-yC-87c" secondAttribute="leading" constant="10" id="ZdG-zU-Dyz"/>
+                            <constraint firstAttribute="bottom" secondItem="aXS-E7-brK" secondAttribute="bottom" constant="5" id="c4B-O6-1bO"/>
+                            <constraint firstItem="3hR-cE-34N" firstAttribute="top" secondItem="JHw-Kx-boC" secondAttribute="bottom" constant="5" id="c7e-HQ-V3B"/>
+                            <constraint firstItem="JHw-Kx-boC" firstAttribute="top" secondItem="KqG-yC-87c" secondAttribute="top" constant="8" id="eZO-KJ-uSG"/>
+                            <constraint firstItem="aXS-E7-brK" firstAttribute="leading" secondItem="KqG-yC-87c" secondAttribute="leading" constant="10" id="mkT-nk-oAo"/>
+                            <constraint firstAttribute="trailing" secondItem="aXS-E7-brK" secondAttribute="trailing" constant="10" id="zvp-N5-07k"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="0.80357350459999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="KqG-yC-87c" firstAttribute="leading" secondItem="PdA-RQ-Cqh" secondAttribute="leading" constant="10" id="EHZ-xK-zY4"/>
+                    <constraint firstAttribute="bottom" secondItem="KqG-yC-87c" secondAttribute="bottom" constant="10" id="jBu-1k-n6N"/>
+                    <constraint firstAttribute="trailing" secondItem="KqG-yC-87c" secondAttribute="trailing" constant="10" id="rWn-Ub-Ccj"/>
+                    <constraint firstItem="KqG-yC-87c" firstAttribute="top" secondItem="PdA-RQ-Cqh" secondAttribute="top" constant="10" id="uoN-M2-7hZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="JkO-eZ-2SO"/>
+            <connections>
+                <outlet property="newsAuthor" destination="DFG-iQ-Liu" id="Fb3-Ey-l6N"/>
+                <outlet property="newsCreatedAt" destination="3hR-cE-34N" id="gLP-rE-7cv"/>
+                <outlet property="newsSource" destination="aXS-E7-brK" id="Zks-zC-IIm"/>
+                <outlet property="newsTitle" destination="JHw-Kx-boC" id="2CJ-9U-YWF"/>
+                <outlet property="viewRounded" destination="KqG-yC-87c" id="ASt-lQ-ENo"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="289.62053571428572"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

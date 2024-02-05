@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UU2-Xq-Vqz">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3kD-Of-4ae">
+            <objects>
+                <navigationController id="UU2-Xq-Vqz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E2W-G9-UfK">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hTT-AY-tGi" kind="relationship" relationship="rootViewController" id="qMw-dO-3FI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkh-lY-ewd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="51"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="E9w-7d-dzk">
+            <objects>
+                <viewController id="hTT-AY-tGi" userLabel="Category" customClass="CategoryView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9u-Am-QaN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yon-n7-TLM">
+                                <rect key="frame" x="0.0" y="169" width="393" height="649"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hTT-AY-tGi" id="6aT-wF-w9c"/>
+                                    <outlet property="delegate" destination="hTT-AY-tGi" id="Vlj-MX-VHw"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-WF-FfJ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51X-hD-1QB">
+                                        <rect key="frame" x="155" y="13.333333333333327" width="83" height="23.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="51X-hD-1QB" firstAttribute="centerY" secondItem="NoB-WF-FfJ" secondAttribute="centerY" id="OlV-uF-mgD"/>
+                                    <constraint firstItem="51X-hD-1QB" firstAttribute="centerX" secondItem="NoB-WF-FfJ" secondAttribute="centerX" id="g2U-lT-RxE"/>
+                                    <constraint firstAttribute="height" constant="50" id="pWY-69-Ee3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nmv-Jk-Z00"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yon-n7-TLM" firstAttribute="leading" secondItem="Nmv-Jk-Z00" secondAttribute="leading" id="1UG-T8-JRa"/>
+                            <constraint firstItem="Nmv-Jk-Z00" firstAttribute="bottom" secondItem="Yon-n7-TLM" secondAttribute="bottom" id="6zr-kV-G0C"/>
+                            <constraint firstItem="Yon-n7-TLM" firstAttribute="top" secondItem="NoB-WF-FfJ" secondAttribute="bottom" constant="16" id="DYh-G1-EwR"/>
+                            <constraint firstItem="Nmv-Jk-Z00" firstAttribute="trailing" secondItem="Yon-n7-TLM" secondAttribute="trailing" id="LaQ-V1-AvL"/>
+                            <constraint firstItem="Nmv-Jk-Z00" firstAttribute="trailing" secondItem="NoB-WF-FfJ" secondAttribute="trailing" id="LhZ-7p-oS0"/>
+                            <constraint firstItem="NoB-WF-FfJ" firstAttribute="top" secondItem="Nmv-Jk-Z00" secondAttribute="top" id="Vi6-mB-qef"/>
+                            <constraint firstItem="NoB-WF-FfJ" firstAttribute="leading" secondItem="c9u-Am-QaN" secondAttribute="leading" id="hGh-8g-qly"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="News Category" id="8AS-m7-kLS" userLabel="Category"/>
+                    <connections>
+                        <outlet property="categoryTableView" destination="Yon-n7-TLM" id="0Gd-EL-DLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYr-YB-j3P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794.6564885496183" y="50.70422535211268"/>
+        </scene>
+        <!--List News View-->
+        <scene sceneID="Mov-68-xke">
+            <objects>
+                <viewController storyboardIdentifier="ListNewsView" id="sAd-qU-ysu" customClass="ListNewsView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HbI-Yw-Ew4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nUR-nA-CM2">
+                                <rect key="frame" x="8" y="179" width="377" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-FR-ylO">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEY-je-y22">
+                                        <rect key="frame" x="148" y="13.333333333333327" width="97.333333333333314" height="23.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="TEY-je-y22" firstAttribute="centerX" secondItem="cvS-FR-ylO" secondAttribute="centerX" id="3cK-TA-pTv"/>
+                                    <constraint firstItem="TEY-je-y22" firstAttribute="centerY" secondItem="cvS-FR-ylO" secondAttribute="centerY" id="7oj-Z4-tAL"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZXe-R1-uYT"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZJn-5b-kdQ">
+                                <rect key="frame" x="16" y="129" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3n2-Pb-3a8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nUR-nA-CM2" firstAttribute="leading" secondItem="3n2-Pb-3a8" secondAttribute="leading" constant="8" id="4Io-21-BFQ"/>
+                            <constraint firstAttribute="trailing" secondItem="cvS-FR-ylO" secondAttribute="trailing" id="9YD-gp-Yte"/>
+                            <constraint firstItem="cvS-FR-ylO" firstAttribute="leading" secondItem="3n2-Pb-3a8" secondAttribute="leading" id="9op-dg-sZM"/>
+                            <constraint firstAttribute="trailing" secondItem="ZJn-5b-kdQ" secondAttribute="trailing" constant="16" id="BEG-ov-Z9g"/>
+                            <constraint firstItem="3n2-Pb-3a8" firstAttribute="bottom" secondItem="nUR-nA-CM2" secondAttribute="bottom" constant="16" id="NII-er-1fR"/>
+                            <constraint firstItem="nUR-nA-CM2" firstAttribute="top" secondItem="ZJn-5b-kdQ" secondAttribute="bottom" constant="16" id="Z7G-pZ-GEj"/>
+                            <constraint firstItem="cvS-FR-ylO" firstAttribute="top" secondItem="3n2-Pb-3a8" secondAttribute="top" id="jJq-47-2Ib"/>
+                            <constraint firstItem="ZJn-5b-kdQ" firstAttribute="top" secondItem="cvS-FR-ylO" secondAttribute="bottom" constant="20" id="sUs-e3-xOE"/>
+                            <constraint firstItem="ZJn-5b-kdQ" firstAttribute="leading" secondItem="3n2-Pb-3a8" secondAttribute="leading" constant="16" id="sUu-Ja-14X"/>
+                            <constraint firstItem="3n2-Pb-3a8" firstAttribute="trailing" secondItem="nUR-nA-CM2" secondAttribute="trailing" constant="8" id="wln-Lx-a3N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleTextField" destination="ZJn-5b-kdQ" id="StK-nS-KCi"/>
+                        <outlet property="newsListTableView" destination="nUR-nA-CM2" id="ca8-XP-ihx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooL-bP-vdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751.9083969465648" y="60.563380281690144"/>
+        </scene>
+        <!--List Source View-->
+        <scene sceneID="cQy-yO-9B4">
+            <objects>
+                <viewController storyboardIdentifier="ListSourceView" id="d7L-0w-Zu6" customClass="ListSourceView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h2a-Hv-j27">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-GX-kqg">
+                                <rect key="frame" x="8" y="179" width="377" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnB-7E-ywJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sources news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVI-QM-qe1">
+                                        <rect key="frame" x="133.66666666666666" y="13.333333333333327" width="125.99999999999997" height="23.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MVI-QM-qe1" firstAttribute="centerY" secondItem="SnB-7E-ywJ" secondAttribute="centerY" id="IDG-xx-fRr"/>
+                                    <constraint firstItem="MVI-QM-qe1" firstAttribute="centerX" secondItem="SnB-7E-ywJ" secondAttribute="centerX" id="SRw-pr-QJN"/>
+                                    <constraint firstAttribute="height" constant="50" id="xhG-an-Zam"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sources Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Rf-ZEE">
+                                <rect key="frame" x="16" y="129" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KSq-JH-afb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SnB-7E-ywJ" firstAttribute="top" secondItem="KSq-JH-afb" secondAttribute="top" id="DEc-EP-eIU"/>
+                            <constraint firstItem="Tsz-Rf-ZEE" firstAttribute="leading" secondItem="h2a-Hv-j27" secondAttribute="leading" constant="16" id="KGS-lK-9MS"/>
+                            <constraint firstItem="lOF-GX-kqg" firstAttribute="top" secondItem="Tsz-Rf-ZEE" secondAttribute="bottom" constant="16" id="Nu2-uf-HO9"/>
+                            <constraint firstItem="KSq-JH-afb" firstAttribute="trailing" secondItem="Tsz-Rf-ZEE" secondAttribute="trailing" constant="16" id="Prj-rI-wK4"/>
+                            <constraint firstItem="KSq-JH-afb" firstAttribute="trailing" secondItem="SnB-7E-ywJ" secondAttribute="trailing" id="QzZ-KI-n2F"/>
+                            <constraint firstItem="lOF-GX-kqg" firstAttribute="leading" secondItem="KSq-JH-afb" secondAttribute="leading" constant="8" id="RBv-QA-Fcm"/>
+                            <constraint firstItem="Tsz-Rf-ZEE" firstAttribute="top" secondItem="SnB-7E-ywJ" secondAttribute="bottom" constant="20" id="UeS-qG-8We"/>
+                            <constraint firstItem="SnB-7E-ywJ" firstAttribute="leading" secondItem="h2a-Hv-j27" secondAttribute="leading" id="k1G-JI-Lao"/>
+                            <constraint firstItem="KSq-JH-afb" firstAttribute="bottom" secondItem="lOF-GX-kqg" secondAttribute="bottom" constant="16" id="tLy-iF-6e3"/>
+                            <constraint firstItem="KSq-JH-afb" firstAttribute="trailing" secondItem="lOF-GX-kqg" secondAttribute="trailing" constant="8" id="wD3-mZ-hO2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sourceTableView" destination="lOF-GX-kqg" id="4AQ-xi-YnG"/>
+                        <outlet property="sourcesTextField" destination="Tsz-Rf-ZEE" id="CQO-cL-M7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csA-r1-D1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2585" y="61"/>
+        </scene>
+        <!--Detail News Web View-->
+        <scene sceneID="R9M-N2-hOn">
+            <objects>
+                <viewController storyboardIdentifier="DetailNewsView" id="OPd-OG-H1B" customClass="DetailNewsWebView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqe-zM-Bwd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dka-KH-wEv">
+                                <rect key="frame" x="8" y="125" width="377" height="677"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yb-L5-xES">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sources news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWI-fp-iJo">
+                                        <rect key="frame" x="8" y="16.999999999999996" width="377" height="16.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sWI-fp-iJo" secondAttribute="trailing" constant="8" id="8po-cg-YxZ"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="centerY" secondItem="3yb-L5-xES" secondAttribute="centerY" id="ayH-VK-Cj0"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="leading" secondItem="3yb-L5-xES" secondAttribute="leading" constant="8" id="rjz-x5-8hx"/>
+                                    <constraint firstItem="sWI-fp-iJo" firstAttribute="centerX" secondItem="3yb-L5-xES" secondAttribute="centerX" id="til-7a-tYx"/>
+                                    <constraint firstAttribute="height" constant="50" id="uV9-E9-Jor"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cZM-F7-udV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3yb-L5-xES" firstAttribute="top" secondItem="cZM-F7-udV" secondAttribute="top" id="DMC-lF-aZB"/>
+                            <constraint firstAttribute="trailing" secondItem="3yb-L5-xES" secondAttribute="trailing" id="LNu-ea-eY4"/>
+                            <constraint firstItem="dka-KH-wEv" firstAttribute="top" secondItem="3yb-L5-xES" secondAttribute="bottom" constant="16" id="N1A-fr-dv9"/>
+                            <constraint firstItem="cZM-F7-udV" firstAttribute="bottom" secondItem="dka-KH-wEv" secondAttribute="bottom" constant="16" id="ORo-AR-yra"/>
+                            <constraint firstItem="dka-KH-wEv" firstAttribute="leading" secondItem="cZM-F7-udV" secondAttribute="leading" constant="8" id="ZuX-Z8-F5R"/>
+                            <constraint firstItem="3yb-L5-xES" firstAttribute="leading" secondItem="cZM-F7-udV" secondAttribute="leading" id="d5W-Za-XrP"/>
+                            <constraint firstItem="cZM-F7-udV" firstAttribute="trailing" secondItem="dka-KH-wEv" secondAttribute="trailing" constant="8" id="owZ-Db-Mxv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleWebTitleLabel" destination="sWI-fp-iJo" id="OKu-Ta-KUr"/>
+                        <outlet property="navigationView" destination="3yb-L5-xES" id="qnL-1f-Emg"/>
+                        <outlet property="webView" destination="dka-KH-wEv" id="XB7-Za-jEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkg-dj-bvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3382.4427480916029" y="61.971830985915496"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
