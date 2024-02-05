@@ -20,7 +20,6 @@ class ListNewsRouter: ListNewsRouterProtocol{
        let presenter: ListNewsPresenterProtocol & ListNewsOutputInteractorProtocol = ListNewsPresenter()
         
         newsListRef.categoryNews = category
-        newsListRef.presenter?.categoryNews = category
         
         newsListRef.presenter = presenter
         newsListRef.presenter?.router = ListNewsRouter()

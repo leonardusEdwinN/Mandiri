@@ -21,10 +21,9 @@ class CategoryPresenter: CategoryPresenterProtocol{
     func getCategoryList() {
         interactor?.getCategory()
     }
-    
 
     func goToListNews(category: String, from view: UIViewController) {
-        router?.pushToListNews(with: category, from: view)
+        router?.pushToListSource(with: category, from: view)
     }
 }
 

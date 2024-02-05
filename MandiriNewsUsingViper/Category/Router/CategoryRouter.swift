@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryRouter: CategoryRouterProtocol{
-    var navigationController: UINavigationController?
-    
     class func createCategoryListModule(categoryListRef: CategoryView) {
        let presenter: CategoryPresenterProtocol & CategoryOutputInteractorProtocol = CategoryPresenter()
         
@@ -21,11 +19,13 @@ class CategoryRouter: CategoryRouterProtocol{
         categoryListRef.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToListNews(with category: String,from view: UIViewController) {
-        let listNewsViewController = view.storyboard?.instantiateViewController(withIdentifier: "ListNewsView") as! ListNewsView
+    func pushToListSource(with category: String, from view: UIViewController) {
+        let listSourceVC = view.storyboard?.instantiateViewController(withIdentifier: "ListSourceView") as! ListSourceView
             
-        ListNewsRouter.createListNewsModule(newsListRef: listNewsViewController, category: category)
-        view.navigationController?.pushViewController(listNewsViewController, animated: true)
+        ListSourceRouter.createListSourceModule(listSourceRef: listSourceVC, category: category)
+        view.navigationController?.pushViewController(listSourceVC, animated: true)
     }
+    
+   
 
 }

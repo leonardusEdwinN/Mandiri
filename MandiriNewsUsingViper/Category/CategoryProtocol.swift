@@ -39,7 +39,7 @@ protocol CategoryOutputInteractorProtocol: class {
 
 protocol CategoryRouterProtocol: class{
     //Presenter -> Wireframe
-    func pushToListNews(with category: String,from view: UIViewController)
+    func pushToListSource(with category: String,from view: UIViewController)
     
     static func createCategoryListModule(categoryListRef: CategoryView)
 }

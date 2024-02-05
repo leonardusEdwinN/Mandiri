@@ -35,6 +35,14 @@
 		13A900E82B70C6EF00562596 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900E62B70C6EF00562596 /* ArticleListTableViewCell.swift */; };
 		13A900E92B70C6EF00562596 /* ArticleListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A900E72B70C6EF00562596 /* ArticleListTableViewCell.xib */; };
 		13A900EC2B70C8DB00562596 /* Extension + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900EB2B70C8DB00562596 /* Extension + TableView.swift */; };
+		13A900F02B70CAD900562596 /* ListSourceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900EF2B70CAD900562596 /* ListSourceInteractor.swift */; };
+		13A900F22B70CAE200562596 /* ListSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900F12B70CAE200562596 /* ListSourceView.swift */; };
+		13A900F42B70CAEC00562596 /* ListSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900F32B70CAEC00562596 /* ListSourcePresenter.swift */; };
+		13A900F72B70CB0700562596 /* ListSourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900F62B70CB0700562596 /* ListSourceRouter.swift */; };
+		13A900F92B70CB1800562596 /* ListSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900F82B70CB1800562596 /* ListSourceProtocol.swift */; };
+		13A900FB2B70D20500562596 /* SourcesResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900FA2B70D20500562596 /* SourcesResponseEntity.swift */; };
+		13A900FE2B70D48000562596 /* SourceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A900FC2B70D48000562596 /* SourceListTableViewCell.swift */; };
+		13A900FF2B70D48000562596 /* SourceListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A900FD2B70D48000562596 /* SourceListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +75,14 @@
 		13A900E62B70C6EF00562596 /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
 		13A900E72B70C6EF00562596 /* ArticleListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListTableViewCell.xib; sourceTree = "<group>"; };
 		13A900EB2B70C8DB00562596 /* Extension + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TableView.swift"; sourceTree = "<group>"; };
+		13A900EF2B70CAD900562596 /* ListSourceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSourceInteractor.swift; sourceTree = "<group>"; };
+		13A900F12B70CAE200562596 /* ListSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSourceView.swift; sourceTree = "<group>"; };
+		13A900F32B70CAEC00562596 /* ListSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSourcePresenter.swift; sourceTree = "<group>"; };
+		13A900F62B70CB0700562596 /* ListSourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSourceRouter.swift; sourceTree = "<group>"; };
+		13A900F82B70CB1800562596 /* ListSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSourceProtocol.swift; sourceTree = "<group>"; };
+		13A900FA2B70D20500562596 /* SourcesResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesResponseEntity.swift; sourceTree = "<group>"; };
+		13A900FC2B70D48000562596 /* SourceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListTableViewCell.swift; sourceTree = "<group>"; };
+		13A900FD2B70D48000562596 /* SourceListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceListTableViewCell.xib; sourceTree = "<group>"; };
 		650951E133471A4CDA0C5F72 /* Pods_MandiriNewsUsingViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MandiriNewsUsingViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918006A0C51C9909E3607446 /* Pods-MandiriNewsUsingViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.debug.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.debug.xcconfig"; sourceTree = "<group>"; };
 		C847BE62F682BBC41600E292 /* Pods-MandiriNewsUsingViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MandiriNewsUsingViper.release.xcconfig"; path = "Target Support Files/Pods-MandiriNewsUsingViper/Pods-MandiriNewsUsingViper.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +121,7 @@
 		134BEE992B6DDD2D002E4B93 /* MandiriNewsUsingViper */ = {
 			isa = PBXGroup;
 			children = (
+				13A900ED2B70CAAF00562596 /* ListSources */,
 				13A900EA2B70C8CD00562596 /* Extensions */,
 				13A900E02B70C44800562596 /* Utils */,
 				13A900D32B70A01400562596 /* Constants */,
@@ -273,6 +290,45 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		13A900ED2B70CAAF00562596 /* ListSources */ = {
+			isa = PBXGroup;
+			children = (
+				13A900F52B70CAF200562596 /* Entity */,
+				13A900EE2B70CAC300562596 /* View */,
+				13A900EF2B70CAD900562596 /* ListSourceInteractor.swift */,
+				13A900F32B70CAEC00562596 /* ListSourcePresenter.swift */,
+				13A900F62B70CB0700562596 /* ListSourceRouter.swift */,
+				13A900F82B70CB1800562596 /* ListSourceProtocol.swift */,
+			);
+			path = ListSources;
+			sourceTree = "<group>";
+		};
+		13A900EE2B70CAC300562596 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13A901002B70D48800562596 /* Cell */,
+				13A900F12B70CAE200562596 /* ListSourceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13A900F52B70CAF200562596 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				13A900FA2B70D20500562596 /* SourcesResponseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		13A901002B70D48800562596 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				13A900FC2B70D48000562596 /* SourceListTableViewCell.swift */,
+				13A900FD2B70D48000562596 /* SourceListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8072DEEDCE1EC8EE4E732332 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A900FF2B70D48000562596 /* SourceListTableViewCell.xib in Resources */,
 				13A900E92B70C6EF00562596 /* ArticleListTableViewCell.xib in Resources */,
 				134BEEA72B6DDD2F002E4B93 /* LaunchScreen.storyboard in Resources */,
 				134BEEA42B6DDD2F002E4B93 /* Assets.xcassets in Resources */,
@@ -410,10 +467,12 @@
 				13A900E42B70C5C400562596 /* LoadingScreen.swift in Sources */,
 				134BEEEA2B6E1DCC002E4B93 /* CategoryPresenter.swift in Sources */,
 				134BEEE82B6E1DC4002E4B93 /* CategoryInteractor.swift in Sources */,
+				13A900F42B70CAEC00562596 /* ListSourcePresenter.swift in Sources */,
 				13A900D52B70A01B00562596 /* Constant.swift in Sources */,
 				13A900DC2B70C32F00562596 /* ArticlesEntity.swift in Sources */,
 				13A900D12B709FD800562596 /* WebService.swift in Sources */,
 				134BEF042B6E63E3002E4B93 /* ListNewsView.swift in Sources */,
+				13A900F22B70CAE200562596 /* ListSourceView.swift in Sources */,
 				134BEF0A2B6E6937002E4B93 /* ListNewsRouter.swift in Sources */,
 				13A900DA2B70C30900562596 /* ArticleResponseEntity.swift in Sources */,
 				134BEE9B2B6DDD2D002E4B93 /* AppDelegate.swift in Sources */,
@@ -421,14 +480,19 @@
 				134BEF082B6E6925002E4B93 /* ListNewsPresenter.swift in Sources */,
 				134BEEE02B6E1CCC002E4B93 /* CategoryView.swift in Sources */,
 				134BEEF32B6E2DF2002E4B93 /* CategoryProtocol.swift in Sources */,
+				13A900F92B70CB1800562596 /* ListSourceProtocol.swift in Sources */,
 				13A900D72B70BAB600562596 /* ListNewsProtocol.swift in Sources */,
 				13A900EC2B70C8DB00562596 /* Extension + TableView.swift in Sources */,
 				134BEEFB2B6E4FCF002E4B93 /* CategoryListTableViewCell.swift in Sources */,
 				134BEEEC2B6E1DD7002E4B93 /* CategoryRouter.swift in Sources */,
 				134BEEE62B6E1DA9002E4B93 /* CategoryEntity.swift in Sources */,
+				13A900FB2B70D20500562596 /* SourcesResponseEntity.swift in Sources */,
 				13A900DE2B70C35200562596 /* SourceEntity.swift in Sources */,
 				13A900E22B70C45100562596 /* Error.swift in Sources */,
 				13A900E82B70C6EF00562596 /* ArticleListTableViewCell.swift in Sources */,
+				13A900F02B70CAD900562596 /* ListSourceInteractor.swift in Sources */,
+				13A900FE2B70D48000562596 /* SourceListTableViewCell.swift in Sources */,
+				13A900F72B70CB0700562596 /* ListSourceRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

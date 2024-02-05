@@ -9,6 +9,7 @@ import Moya
 
 public enum WebService {
     case newsListWithCategory(category: String, country: String)
+    case getNewsSources
 }
 
 extension WebService: TargetType {
@@ -20,12 +21,14 @@ extension WebService: TargetType {
         switch self {
         case .newsListWithCategory:
             return "/top-headlines"
+        case .getNewsSources:
+            return "/top-headlines/sources"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .newsListWithCategory:
+        case .newsListWithCategory, .getNewsSources:
             return .get
         }
     }
@@ -42,6 +45,10 @@ extension WebService: TargetType {
                     "country": country,
                     "category": category,
                     "apiKey": ConstantAuth.APIKEY],
+                encoding: URLEncoding.default)
+        case .getNewsSources:
+            return .requestParameters(
+                parameters: ["apiKey": ConstantAuth.APIKEY],
                 encoding: URLEncoding.default)
         }
     }
