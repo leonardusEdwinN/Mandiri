@@ -121,13 +121,11 @@
 		134BEE992B6DDD2D002E4B93 /* MandiriNewsUsingViper */ = {
 			isa = PBXGroup;
 			children = (
-				13A900ED2B70CAAF00562596 /* ListSources */,
+				13C1614F2B70E2EE00629414 /* Module */,
 				13A900EA2B70C8CD00562596 /* Extensions */,
 				13A900E02B70C44800562596 /* Utils */,
 				13A900D32B70A01400562596 /* Constants */,
 				13A900CF2B709FCC00562596 /* WebService */,
-				134BEEFF2B6E63AC002E4B93 /* ListNews */,
-				134BEEDB2B6E1CA2002E4B93 /* Category */,
 				134BEEDA2B6E1C75002E4B93 /* Common */,
 			);
 			path = MandiriNewsUsingViper;
@@ -327,6 +325,16 @@
 				13A900FD2B70D48000562596 /* SourceListTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		13C1614F2B70E2EE00629414 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				134BEEDB2B6E1CA2002E4B93 /* Category */,
+				13A900ED2B70CAAF00562596 /* ListSources */,
+				134BEEFF2B6E63AC002E4B93 /* ListNews */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		8072DEEDCE1EC8EE4E732332 /* Pods */ = {
