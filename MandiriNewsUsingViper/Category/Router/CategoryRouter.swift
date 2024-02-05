@@ -22,9 +22,9 @@ class CategoryRouter: CategoryRouterProtocol{
     }
     
     func pushToListNews(with category: String,from view: UIViewController) {
-        let listNewsViewController = view.storyboard?.instantiateViewController(withIdentifier: "ListNewsViewController") as! ListNewsViewController
+        let listNewsViewController = view.storyboard?.instantiateViewController(withIdentifier: "ListNewsView") as! ListNewsView
             
-        ListNewsRouter.createListNewsModule(with: listNewsViewController, category: category)
+        ListNewsRouter.createListNewsModule(newsListRef: listNewsViewController, category: category)
         view.navigationController?.pushViewController(listNewsViewController, animated: true)
     }
 

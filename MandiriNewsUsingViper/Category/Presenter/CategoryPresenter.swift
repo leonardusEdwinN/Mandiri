@@ -11,7 +11,7 @@ import UIKit
 class CategoryPresenter: CategoryPresenterProtocol{
    
     var interactor: CategoryInputInteractorProtocol?
-    var view: CategoryViewProtocol?
+    weak var view: CategoryViewProtocol?
     var router: CategoryRouterProtocol?
     
     func viewDidLoad() {

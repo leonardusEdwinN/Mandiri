@@ -6,45 +6,29 @@
 //
 
 import Foundation
-
-protocol ListNewsPresenterProtocol{
-    var view: ListNewsViewControllerProtocol? { get set }
-    var interactor: ListNewsInteractorProtocol? { get set }
-    var router: ListNewsRouterProtocol? { get set }
-    var news: [String]? { get set }
-//    var categoryCount: Int { get }
-    
-    func interactorDidFetchNewsWithCategory(with result: [String])
-    
-    func goToListNews(identifier:String, category: String)
-    
-}
+import UIKit
 
 class ListNewsPresenter: ListNewsPresenterProtocol {
-    var view: ListNewsViewControllerProtocol?
     
-    var interactor: ListNewsInteractorProtocol?
-    
+    var view: ListNewsViewProtocol?
+    var interactor: ListNewsInputInteractorProtocol?
     var router: ListNewsRouterProtocol?
     
-    var news: [String]?
+    var categoryNews: String?
     
-    var category: String? {
-        didSet{
-//            interactor.nanti moya
-        }
+    func viewDidLoad(categoryNews: String) {
+        interactor?.getNews(category: categoryNews)
     }
     
-//    var categoryCount: Int
-    
-    func interactorDidFetchNewsWithCategory(with result: [String]) {
-        news = result
-        view?.updateNews()
-    }
-    
-    func goToListNews(identifier: String, category: String) {
+    func goToDetailNews(url: String, from view: UIViewController) {
         
     }
     
     
+}
+
+extension ListNewsPresenter: ListNewsOutputInteractorProtocol{
+    func interactorDidFetchCategory(with result: [CategoryEntity]) {
+        
+    }
 }

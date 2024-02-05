@@ -10,7 +10,7 @@ import UIKit
 
 
 
-protocol CategoryPresenterProtocol{
+protocol CategoryPresenterProtocol: class{
     //View -> Presenter
     var view: CategoryViewProtocol? { get set }
     var interactor: CategoryInputInteractorProtocol? { get set }
@@ -20,12 +20,12 @@ protocol CategoryPresenterProtocol{
     func goToListNews(category: String, from view: UIViewController)
 }
 
-protocol CategoryViewProtocol{
+protocol CategoryViewProtocol: class{
     // PRESENTER -> VIEW
     func showCategories(with categories: [CategoryEntity])
 }
 
-protocol CategoryInputInteractorProtocol{
+protocol CategoryInputInteractorProtocol: class{
     //Presenter -> Interactor
     var presenter : CategoryOutputInteractorProtocol? { get set }
     
@@ -37,7 +37,7 @@ protocol CategoryOutputInteractorProtocol: class {
     func interactorDidFetchCategory(with result: [CategoryEntity])
 }
 
-protocol CategoryRouterProtocol{
+protocol CategoryRouterProtocol: class{
     //Presenter -> Wireframe
     func pushToListNews(with category: String,from view: UIViewController)
     

@@ -60,16 +60,31 @@
             </objects>
             <point key="canvasLocation" x="795" y="51"/>
         </scene>
-        <!--View Controller-->
+        <!--List News View-->
         <scene sceneID="Mov-68-xke">
             <objects>
-                <viewController id="sAd-qU-ysu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListNewsView" id="sAd-qU-ysu" customClass="ListNewsView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HbI-Yw-Ew4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nUR-nA-CM2">
+                                <rect key="frame" x="8" y="91" width="377" height="711"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3n2-Pb-3a8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nUR-nA-CM2" firstAttribute="leading" secondItem="3n2-Pb-3a8" secondAttribute="leading" constant="8" id="4Io-21-BFQ"/>
+                            <constraint firstItem="3n2-Pb-3a8" firstAttribute="bottom" secondItem="nUR-nA-CM2" secondAttribute="bottom" constant="16" id="NII-er-1fR"/>
+                            <constraint firstItem="nUR-nA-CM2" firstAttribute="top" secondItem="3n2-Pb-3a8" secondAttribute="top" constant="32" id="UL1-PU-P86"/>
+                            <constraint firstItem="3n2-Pb-3a8" firstAttribute="trailing" secondItem="nUR-nA-CM2" secondAttribute="trailing" constant="8" id="wln-Lx-a3N"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newsListTableView" destination="nUR-nA-CM2" id="ca8-XP-ihx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooL-bP-vdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,20 +6,11 @@
 //
 
 import Foundation
-protocol ListNewsInteractorProtocol {
-    var presenter : ListNewsPresenterProtocol? { get set }
-    var news: [String]? { get }
-    
-    func getNews(category: String)
-}
 
-class ListNewsInteractor: ListNewsInteractorProtocol {
-    var presenter: ListNewsPresenterProtocol?
-    
-    var news: [String]?
+class ListNewsInteractor: ListNewsInputInteractorProtocol {
+    var presenter: ListNewsOutputInteractorProtocol?
     
     func getNews(category: String) {
         
     }
-    
 }
