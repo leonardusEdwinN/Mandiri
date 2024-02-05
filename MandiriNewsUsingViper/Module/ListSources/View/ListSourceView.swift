@@ -14,6 +14,7 @@ class ListSourceView: UIViewController, ListSourcesViewProtocol{
     var sourcesList = [SourceEntity]()
     var isLoading = false
     
+    @IBOutlet weak var sourcesTextField: UITextField!
     @IBOutlet weak var sourceTableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,14 +24,20 @@ class ListSourceView: UIViewController, ListSourcesViewProtocol{
         }
         
         presenter?.categoryNews = categoryNews
-        presenter?.viewDidLoad()
+        presenter?.viewDidLoad(querySearch: sourcesTextField.text ?? "") // nanti di isi sama textfield
         
         sourceTableView.register(UINib.init(nibName: "SourceListTableViewCell", bundle: .main), forCellReuseIdentifier: "sourceCell")
         sourceTableView.delegate = self
         sourceTableView.dataSource = self
+        
+        sourcesTextField.delegate = self
     }
     
-    func updateSources(with sources: [SourceEntity]) {
+    func updateSources(with sources: [SourceEntity], isSearch: Bool) {
+        if isSearch {
+            sourcesList = []
+        }
+        
         if sources.count > 0 {
             sources.forEach{ source in
                 sourcesList.append(source)
@@ -88,15 +95,41 @@ extension ListSourceView: UITableViewDataSource{
         presenter?.goToNewsListWithCategoryAndSource(with: self.categoryNews ?? "all", source: source.id ?? "", and: source.country ?? "id", from: self)
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        // need to pass your indexpath then it showing your indicator at bottom
-//        tableView.addLoading(indexPath) {
-//            // add your code here
-//            // append Your array and reload your tableview
-//            self.getNewsFromSourceName(sourceName: self.sourcesName, isNext: true)
-//            tableView.stopLoading() // stop your indicator
-//        }
-//    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let getCountSources = sourcesList.count
+        
+        if indexPath.row == getCountSources - 2 && !isLoading && getCountSources >= 10{
+            isLoading = true
+            LoadingScreen.sharedInstance.showIndicator()
+            guard let searchText = sourcesTextField.text else {return}
+            presenter?.loadMoreSources(isSearch: searchText == "" ? false : true, querySearch: searchText)
+            
+        }
+        
+    }
     
     
+}
+
+extension ListSourceView : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.isLoading = true
+        LoadingScreen.sharedInstance.showIndicator()
+        
+        guard let searchText = textField.text else { return false}
+        presenter?.searchSources(querySearch: searchText)
+        
+        return true
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ListSourceView.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

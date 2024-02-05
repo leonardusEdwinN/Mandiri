@@ -14,17 +14,28 @@ class ListSourcePresenter: ListSourcesPresenterProtocol{
     var router: ListSourcesRouterProtocol?
     
     var categoryNews: String?
+    var page = 1
     
     
-    func viewDidLoad() {
-        self.getSourcesArticle()
+    func viewDidLoad(querySearch: String) {
+        self.getSourcesArticle(querySearch: querySearch)
     }
     
-    func getSourcesArticle(){
-        interactor?.getSources()
+    func getSourcesArticle(querySearch: String){
+        interactor?.getSources(page: page, limit: 15, querySearch: querySearch)
     }
     func goToNewsListWithCategoryAndSource(with category: String, source: String, and countryCode: String, from view: UIViewController) {
         router?.pushToArticleList(with: category, source: source, andCountryCode: countryCode, from: view)
+    }
+    
+    func loadMoreSources(isSearch: Bool, querySearch: String) {
+        page += 1
+        interactor?.getSources(page: page, limit: 10, querySearch: querySearch)
+       
+    }
+    
+    func searchSources(querySearch : String){
+        interactor?.getSources(page: 1, limit: 15, querySearch: querySearch)
     }
 }
 
@@ -36,7 +47,7 @@ extension ListSourcePresenter: ListSourcesOutputInteractorProtocol{
             print("ERROR GET DATA :\(error.localizedDescription)")
             view?.updateWithError(with: error.localizedDescription)
         case .success(let listSources):
-            view?.updateSources(with: listSources)
+            view?.updateSources(with: listSources, isSearch : page == 1)
         }
     }
     

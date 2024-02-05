@@ -12,8 +12,8 @@ class ListSourceInteractor: ListSourcesInputInteractorProtocol{
     var presenter: ListSourcesOutputInteractorProtocol?
     let provider = MoyaProvider<WebService>()
     
-    func getSources() {
-        provider.request(.getNewsSources) { [weak self] result in
+    func getSources(page: Int, limit: Int, querySearch: String) {
+        provider.request(.getNewsSources(page: page, limit: limit, query: querySearch)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

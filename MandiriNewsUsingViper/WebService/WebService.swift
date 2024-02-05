@@ -9,7 +9,7 @@ import Moya
 
 public enum WebService {
     case newsListWithCategory(category: String, countryId: String, source: String)
-    case getNewsSources
+    case getNewsSources(page: Int, limit: Int, query: String)
 }
 
 extension WebService: TargetType {
@@ -47,9 +47,14 @@ extension WebService: TargetType {
                     "category": category,
                     "apiKey": ConstantAuth.APIKEY],
                 encoding: URLEncoding.default)
-        case .getNewsSources:
+        case let .getNewsSources(page, limit, query):
             return .requestParameters(
-                parameters: ["apiKey": ConstantAuth.APIKEY],
+                parameters: [
+                    "page": page,
+                    "pageSize": limit,
+                    "q": query,
+                    "apiKey": ConstantAuth.APIKEY
+                ],
                 encoding: URLEncoding.default)
         }
     }

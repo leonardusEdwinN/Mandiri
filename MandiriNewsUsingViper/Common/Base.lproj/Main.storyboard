@@ -167,7 +167,7 @@
                                     <constraint firstAttribute="height" constant="50" id="xhG-an-Zam"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Rf-ZEE">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sources Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Rf-ZEE">
                                 <rect key="frame" x="16" y="129" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -190,6 +190,7 @@
                     </view>
                     <connections>
                         <outlet property="sourceTableView" destination="lOF-GX-kqg" id="4AQ-xi-YnG"/>
+                        <outlet property="sourcesTextField" destination="Tsz-Rf-ZEE" id="CQO-cL-M7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csA-r1-D1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

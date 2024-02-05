@@ -15,13 +15,16 @@ protocol ListSourcesPresenterProtocol: class{
     
     var categoryNews: String? { get set }
     
-    func viewDidLoad()
+    func viewDidLoad(querySearch: String)
     func goToNewsListWithCategoryAndSource(with category: String, source: String, and countryCode: String, from view: UIViewController)
+    
+    func loadMoreSources(isSearch: Bool, querySearch: String)
+    func searchSources(querySearch : String)
 }
 
 protocol ListSourcesViewProtocol: class{
     // PRESENTER -> VIEW
-    func updateSources(with sources: [SourceEntity])
+    func updateSources(with sources: [SourceEntity], isSearch: Bool)
     func updateWithError(with error : String)
 }
 
@@ -29,7 +32,7 @@ protocol ListSourcesInputInteractorProtocol: class{
     //Presenter -> Interactor
     var presenter : ListSourcesOutputInteractorProtocol? { get set }
     
-    func getSources()
+    func getSources(page: Int, limit: Int, querySearch: String)
 }
 
 protocol ListSourcesOutputInteractorProtocol: class {
