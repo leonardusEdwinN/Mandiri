@@ -8,32 +8,38 @@
 import Foundation
 import UIKit
 
-//protocol CategoryPresenterToViewProtocol: AnyObject {
-//    func showCategory()
-////    func showError()
-//}
-//
-//protocol CategoryInteractorToPresenterProtocol: AnyObject {
-//    func categoryFetched()
-//}
-//
-//protocol CategoryPresenterToInteractorProtocol: AnyObject {
-//    var presenter: CategoryInteractorToPresenterProtocol? { get set }
-//    var categories: [CategoryEntity]? { get }
-//    
-//    func fetchCategories()
-//}
-//
-//protocol CategoryViewToPresenterProtocol: AnyObject {
-//    var view: CategoryPresenterToViewProtocol? { get set }
-//    var interactor: CategoryPresenterToInteractorProtocol? { get set }
-//    var router: CategoryPresenterToRouterProtocol? { get set }
-//    
-//    func updateView()
-//    func getNewsListCount() -> Int?
-//    func getNews(index: Int) -> CategoryEntity?
-//}
-//
-//protocol CategoryPresenterToRouterProtocol: AnyObject {
-//    static func createModule() -> UIViewController
-//}
+
+
+protocol CategoryPresenterProtocol{
+    //View -> Presenter
+    var view: CategoryViewProtocol? { get set }
+    var interactor: CategoryInputInteractorProtocol? { get set }
+    var router: CategoryRouterProtocol? { get set }
+    
+    func viewDidLoad()
+    func goToListNews(category: String, from view: UIViewController)
+}
+
+protocol CategoryViewProtocol{
+    // PRESENTER -> VIEW
+    func showCategories(with categories: [CategoryEntity])
+}
+
+protocol CategoryInputInteractorProtocol{
+    //Presenter -> Interactor
+    var presenter : CategoryOutputInteractorProtocol? { get set }
+    
+    func getCategory()
+}
+
+protocol CategoryOutputInteractorProtocol: class {
+    //Interactor -> Presenter
+    func interactorDidFetchCategory(with result: [CategoryEntity])
+}
+
+protocol CategoryRouterProtocol{
+    //Presenter -> Wireframe
+    func pushToListNews(with category: String,from view: UIViewController)
+    
+    static func createCategoryListModule(categoryListRef: CategoryView)
+}

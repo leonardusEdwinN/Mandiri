@@ -6,18 +6,17 @@
 //
 
 import Foundation
-protocol CategoryInteractorProtocol{
-    var presenter : CategoryPresenterProtocol? { get set }
-    var categories: [CategoryEntity]? { get }
-    
-    func getCategory()
-}
 
-class CategoryInteractor: CategoryInteractorProtocol{
-    var categories: [CategoryEntity]?
-    var presenter: CategoryPresenterProtocol?
+class CategoryInteractor: CategoryInputInteractorProtocol{
+    var presenter: CategoryOutputInteractorProtocol?
     
     func getCategory() {
+        presenter?.interactorDidFetchCategory(with: getAllCategories())
+    }
+    
+    
+    func getAllCategories() -> [CategoryEntity] {
+        var categories = [CategoryEntity]()
         categories =  [
             CategoryEntity(categoryName: "business", categoryImage: "briefcase"),
             CategoryEntity(categoryName: "entertainment", categoryImage: "tv.and.mediabox"),
@@ -28,9 +27,8 @@ class CategoryInteractor: CategoryInteractorProtocol{
             CategoryEntity(categoryName: "technology", categoryImage: "desktopcomputer"),
         ]
         
-        presenter?.interactorDidFetchCategory(with: categories ?? [])
+        return categories
     }
-    
     
     
     

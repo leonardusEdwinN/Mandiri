@@ -6,46 +6,30 @@
 //
 
 import Foundation
-
-protocol CategoryPresenterProtocol{
-    var view: CategoryViewControllerProtocol? { get set }
-    var interactor: CategoryInteractorProtocol? { get set }
-    var router: CategoryRouterProtocol? { get set }
-    var categories: [CategoryEntity]? { get set }
-    var categoryCount: Int { get }
-    
-    func interactorDidFetchCategory(with result: [CategoryEntity])
-    
-    func goToListNews(identifier:String, category: String)
-    
-}
+import UIKit
 
 class CategoryPresenter: CategoryPresenterProtocol{
-    var categories: [CategoryEntity]?
-    var categoryCount: Int {
-        return categories?.count ?? 0
-    }
-    
-    var view: CategoryViewControllerProtocol?
-    
-    var interactor: CategoryInteractorProtocol? {
-        didSet{
-            interactor?.getCategory()
-        }
-    }
-    
+   
+    var interactor: CategoryInputInteractorProtocol?
+    var view: CategoryViewProtocol?
     var router: CategoryRouterProtocol?
     
+    func viewDidLoad() {
+        self.getCategoryList()
+    }
+
+    func getCategoryList() {
+        interactor?.getCategory()
+    }
+    
+
+    func goToListNews(category: String, from view: UIViewController) {
+        router?.pushToListNews(with: category, from: view)
+    }
+}
+
+extension CategoryPresenter: CategoryOutputInteractorProtocol {
     func interactorDidFetchCategory(with result: [CategoryEntity]) {
-        categories = result
-        view?.update()
+        view?.showCategories(with: result)
     }
-    
-    func goToListNews(identifier:String, category: String) {
-        router?.performSegue(with: identifier, withCategory: category)
-    }
-    
-    
-    
-    
 }

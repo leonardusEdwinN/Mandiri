@@ -13,7 +13,11 @@ class CategoryListTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
     
     func setCell(title: String, image: String) {
-        categoryImageView.image = UIImage.init(systemName: image)
+        if #available(iOS 13.0, *) {
+            categoryImageView.image = UIImage.init(systemName: image)
+        } else {
+            // Fallback on earlier versions
+        }
         categoryNameLabel.text = title
     }
 

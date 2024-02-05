@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UU2-Xq-Vqz">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3kD-Of-4ae">
+            <objects>
+                <navigationController id="UU2-Xq-Vqz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E2W-G9-UfK">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hTT-AY-tGi" kind="relationship" relationship="rootViewController" id="Iwv-ix-ZjM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkh-lY-ewd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="51"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="E9w-7d-dzk">
+            <objects>
+                <viewController id="hTT-AY-tGi" userLabel="Category" customClass="CategoryView" customModule="MandiriNewsUsingViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9u-Am-QaN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yon-n7-TLM">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hTT-AY-tGi" id="6aT-wF-w9c"/>
+                                    <outlet property="delegate" destination="hTT-AY-tGi" id="Vlj-MX-VHw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nmv-Jk-Z00"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yon-n7-TLM" firstAttribute="leading" secondItem="Nmv-Jk-Z00" secondAttribute="leading" id="1UG-T8-JRa"/>
+                            <constraint firstItem="Nmv-Jk-Z00" firstAttribute="bottom" secondItem="Yon-n7-TLM" secondAttribute="bottom" id="6zr-kV-G0C"/>
+                            <constraint firstItem="Nmv-Jk-Z00" firstAttribute="trailing" secondItem="Yon-n7-TLM" secondAttribute="trailing" id="LaQ-V1-AvL"/>
+                            <constraint firstItem="Yon-n7-TLM" firstAttribute="top" secondItem="c9u-Am-QaN" secondAttribute="top" id="nNk-ML-cLU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="News Category" id="8AS-m7-kLS" userLabel="Category"/>
+                    <connections>
+                        <outlet property="categoryTableView" destination="Yon-n7-TLM" id="0Gd-EL-DLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYr-YB-j3P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="51"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mov-68-xke">
+            <objects>
+                <viewController id="sAd-qU-ysu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HbI-Yw-Ew4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3n2-Pb-3a8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooL-bP-vdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

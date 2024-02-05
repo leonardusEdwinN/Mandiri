@@ -8,6 +8,18 @@
 import Foundation
 import UIKit
 
-class ListNewsViewController: UIViewController{
+protocol ListNewsViewControllerProtocol{
+    var presenter : ListNewsPresenterProtocol? { get set }
+    
+    func updateNews()
+}
+
+class ListNewsViewController: UIViewController, ListNewsViewControllerProtocol{
+    var presenter: ListNewsPresenterProtocol?
+    
+    func updateNews() {
+        
+    }
+    
     
 }
