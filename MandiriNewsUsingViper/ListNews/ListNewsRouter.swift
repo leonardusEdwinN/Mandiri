@@ -16,10 +16,12 @@ class ListNewsRouter: ListNewsRouterProtocol{
         view.navigationController?.pushViewController(webViewDetail, animated: true)
     }
     
-    class func createListNewsModule(newsListRef: ListNewsView, category: String) {
+    class func createListNewsModule(newsListRef: ListNewsView, category: String, source: String, countryCode: String) {
        let presenter: ListNewsPresenterProtocol & ListNewsOutputInteractorProtocol = ListNewsPresenter()
         
         newsListRef.categoryNews = category
+        newsListRef.sourceFrom = source
+        newsListRef.countryCode = countryCode
         
         newsListRef.presenter = presenter
         newsListRef.presenter?.router = ListNewsRouter()

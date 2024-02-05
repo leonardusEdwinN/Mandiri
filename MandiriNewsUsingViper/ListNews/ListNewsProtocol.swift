@@ -16,7 +16,7 @@ protocol ListNewsPresenterProtocol{
     
     var categoryNews: String? { get set }
     
-    func viewDidLoad(categoryNews: String)
+    func viewDidLoad(categoryNews: String, countryCode: String, source: String)
     func goToDetailNews(url: String, from view: UIViewController)
 }
 
@@ -30,7 +30,7 @@ protocol ListNewsInputInteractorProtocol{
     //Presenter -> Interactor
     var presenter : ListNewsOutputInteractorProtocol? { get set }
     
-    func getNews(category: String)
+    func getNews(category: String, countryCode: String, sourceFrom: String)
 }
 
 protocol ListNewsOutputInteractorProtocol: class {
@@ -42,6 +42,6 @@ protocol ListNewsRouterProtocol{
     //Presenter -> Wireframe
     func pushToDetailNews(with url: String, from view: UIViewController)
     
-    static func createListNewsModule(newsListRef: ListNewsView, category: String)
+    static func createListNewsModule(newsListRef: ListNewsView, category: String, source: String, countryCode: String)
 }
 

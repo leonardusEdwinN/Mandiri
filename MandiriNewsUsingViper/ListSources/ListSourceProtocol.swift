@@ -39,7 +39,7 @@ protocol ListSourcesOutputInteractorProtocol: class {
 
 protocol ListSourcesRouterProtocol: class{
     //Presenter -> Wireframe
-    func pushToArticleList(with category: String, and source: String, from view: UIViewController)
+    func pushToArticleList(with category: String, source: String, andCountryCode countryCode: String, from view: UIViewController)
     
     static func createListSourceModule(listSourceRef: ListSourceView, category: String)
 }

@@ -9,12 +9,11 @@ import Foundation
 import Moya
 
 class ListNewsInteractor: ListNewsInputInteractorProtocol {
-    
     let provider = MoyaProvider<WebService>()
     var presenter: ListNewsOutputInteractorProtocol?
     
-    func getNews(category: String) {
-        provider.request(.newsListWithCategory(category: category, country: "id")) { [weak self] result in
+    func getNews(category: String, countryCode: String, sourceFrom: String) {
+        provider.request(.newsListWithCategory(category: category, countryId: "", source: sourceFrom)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

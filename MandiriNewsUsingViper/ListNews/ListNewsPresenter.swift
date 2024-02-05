@@ -10,14 +10,16 @@ import UIKit
 
 class ListNewsPresenter: ListNewsPresenterProtocol {
     
+    
+    
     var view: ListNewsViewProtocol?
     var interactor: ListNewsInputInteractorProtocol?
     var router: ListNewsRouterProtocol?
     
     var categoryNews: String?
     
-    func viewDidLoad(categoryNews: String) {
-        interactor?.getNews(category: categoryNews)
+    func viewDidLoad(categoryNews: String, countryCode: String, source: String) {
+        interactor?.getNews(category: categoryNews, countryCode: countryCode, sourceFrom: source)
     }
     
     func goToDetailNews(url: String, from view: UIViewController) {

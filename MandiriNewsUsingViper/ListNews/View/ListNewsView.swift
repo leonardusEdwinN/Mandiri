@@ -12,13 +12,15 @@ class ListNewsView: UIViewController, ListNewsViewProtocol{
    
     var presenter: ListNewsPresenterProtocol?
     var categoryNews: String?
+    var sourceFrom: String?
+    var countryCode: String?
     var articleList = [ArticlesEntity]()
     var isLoading: Bool = false
     
     @IBOutlet weak var newsListTableView: UITableView!
     
     override func viewDidLoad() {
-        presenter?.viewDidLoad(categoryNews : categoryNews ?? "all")
+        presenter?.viewDidLoad(categoryNews : categoryNews ?? "all", countryCode: countryCode ?? "", source: sourceFrom ?? "")
         
         newsListTableView.register(UINib.init(nibName: "ArticleListTableViewCell", bundle: .main), forCellReuseIdentifier: "articleCell")
         newsListTableView.delegate = self

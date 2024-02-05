@@ -25,7 +25,7 @@ class ListSourcePresenter: ListSourcesPresenterProtocol{
         interactor?.getSources()
     }
     func goToNewsListWithCategoryAndSource(with category: String, source: String, and countryCode: String, from view: UIViewController) {
-        
+        router?.pushToArticleList(with: category, source: source, andCountryCode: countryCode, from: view)
     }
 }
 

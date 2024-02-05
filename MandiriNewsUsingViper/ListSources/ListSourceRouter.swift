@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 
 class ListSourceRouter: ListSourcesRouterProtocol{
+    func pushToArticleList(with category: String, source: String, andCountryCode countryCode: String, from view: UIViewController) {
+        let listNewsViewController = view.storyboard?.instantiateViewController(withIdentifier: "ListNewsView") as! ListNewsView
+            
+        ListNewsRouter.createListNewsModule(newsListRef: listNewsViewController, category: category, source: source, countryCode: countryCode)
+        view.navigationController?.pushViewController(listNewsViewController, animated: true)
+    }
+    
     static func createListSourceModule(listSourceRef: ListSourceView, category: String) {
         let presenter: ListSourcesPresenterProtocol & ListSourcesOutputInteractorProtocol = ListSourcePresenter()
          
@@ -19,14 +26,5 @@ class ListSourceRouter: ListSourcesRouterProtocol{
         listSourceRef.presenter?.interactor = ListSourceInteractor()
         listSourceRef.presenter?.interactor?.presenter = presenter
     }
-    
-    func pushToArticleList(with category: String, and source: String, from view: UIViewController) {
-        let listNewsViewController = view.storyboard?.instantiateViewController(withIdentifier: "ListNewsView") as! ListNewsView
-            
-        ListNewsRouter.createListNewsModule(newsListRef: listNewsViewController, category: category)
-        view.navigationController?.pushViewController(listNewsViewController, animated: true)
-        
-    }
-    
     
 }
