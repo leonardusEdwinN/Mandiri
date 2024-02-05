@@ -22,7 +22,8 @@ protocol ListNewsPresenterProtocol{
 
 protocol ListNewsViewProtocol{
     // PRESENTER -> VIEW
-    func updateNews(with categories: [CategoryEntity])
+    func updateNews(with news: [ArticlesEntity])
+    func updateWithError(with error : String)
 }
 
 protocol ListNewsInputInteractorProtocol{
@@ -34,7 +35,7 @@ protocol ListNewsInputInteractorProtocol{
 
 protocol ListNewsOutputInteractorProtocol: class {
     //Interactor -> Presenter
-    func interactorDidFetchCategory(with result: [CategoryEntity])
+    func interactorDidFetchNewsListWithCategory(with result: Result<[ArticlesEntity], Error>)
 }
 
 protocol ListNewsRouterProtocol{

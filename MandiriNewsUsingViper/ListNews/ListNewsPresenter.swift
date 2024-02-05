@@ -28,7 +28,14 @@ class ListNewsPresenter: ListNewsPresenterProtocol {
 }
 
 extension ListNewsPresenter: ListNewsOutputInteractorProtocol{
-    func interactorDidFetchCategory(with result: [CategoryEntity]) {
-        
+    func interactorDidFetchNewsListWithCategory(with result: Result<[ArticlesEntity], Error>) {
+        switch result{
+        case .failure(let error):
+            print("ERROR GET DATA :\(error.localizedDescription)")
+            view?.updateWithError(with: error.localizedDescription)
+        case .success(let listArticles):
+            view?.updateNews(with: listArticles)
+        }
     }
+    
 }
